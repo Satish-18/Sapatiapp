@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "d66466c9-47cd-46dc-8b7f-844ed5e136cd",
+		"name": "city_tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28965255"
+	},
+	"item": [
+		{
+			"name": "cash info table",
+			"item": [
+				{
+					"name": "payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"borrowerAmount\":10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cash-info/payment/1"
+					},
+					"response": []
+				},
+				{
+					"name": "user_history",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "pay-to-borrower",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/cash-info/process-lender-transaction/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users table",
+			"item": [
+				{
+					"name": "user-registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n\r\n        \"firstName\": \"satish\",\r\n        \"lastName\": \"subedi\",\r\n        \"email\": \"satishsubedi18@gmail.com\",\r\n        \"password\": \"123\",\r\n        \"userType\": \"LENDER\",\r\n        \"lenderAmount\": 20000\r\n    \r\n       \r\n    \r\n    \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/paisade/users-registration"
+					},
+					"response": []
+				},
+				{
+					"name": "user_verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/paisade/verify"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"satish\",\r\n    \"email\": \"satishsi18@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/paisade/login"
+					},
+					"response": []
+				},
+				{
+					"name": "get_total-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/paisade/total-users"
+					},
+					"response": []
+				},
+				{
+					"name": "update-users-details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"satish\",\r\n    \"lastName\": \"subedi\",\r\n    \"email\": \"satishsubedi18@gmail.com\",\r\n    \"address\": \"kathmandu\",\r\n    \"phoneNumber\": \"9861351199\",\r\n    \"password\": \"hello@119\",\r\n    \"userType\": \"Lender\",\r\n    \"verified\": false,\r\n    \"createdOn\": \"14 nov\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/paisade/update-users-details/1"
+					},
+					"response": []
+				},
+				{
+					"name": "deteteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/paisade/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction table",
+			"item": [
+				{
+					"name": "request_to_lender",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"borrowerId\": 1,\r\n  \"lenderId\": 2,\r\n  \"amount\": 1000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/paisade/request-for-transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "approve-request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"APPROVED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/paisade/approve-request/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
